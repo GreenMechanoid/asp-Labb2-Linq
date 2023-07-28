@@ -1,0 +1,39 @@
+﻿@model IEnumerable<Labb2_Linq.Models.InfoViewModel>
+@{
+    ViewData["Title"] = "StudentsInCourse";
+}
+
+<h1>StudentsInCourse</h1>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.StudentName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CourseName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TeacherName)
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <th>
+                    @Html.DisplayFor(modelItem => item.StudentName)
+                </th>
+                <td>
+                    @Html.DisplayFor(modelItem => item.CourseName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.TeacherName)
+                </td>
+
+            </tr>
+        }
+    </tbody>
+</table>

@@ -1,0 +1,42 @@
+﻿@model Labb2_Linq.Models.InfoConnection
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Details</h1>
+
+<div>
+    <h4>InfoConnection</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.students)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.students.StudentID)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.teachers)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.teachers.TeacherID)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.classes)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.classes.ClassesID)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.courses)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.courses.CourseID)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model?.ConnectionID">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>

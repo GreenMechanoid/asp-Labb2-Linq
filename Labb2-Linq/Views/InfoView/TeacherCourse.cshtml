@@ -1,0 +1,50 @@
+﻿@model IEnumerable<Labb2_Linq.Models.InfoViewModel>
+@{
+    ViewData["Title"] = "TeacherCourse";
+}
+
+<h1>TeacherCourse</h1>
+
+<form asp-action="TeacherCourse">
+    <div class="form-group">
+        <label for="queryString" class="control-label">Course Name: </label>
+        <input type="text" name="queryString" placeholder="Math B2" />
+        <input type="submit" value="Search" class="btn btn-primary" />
+        <a href="@Url.Action("TeacherCourse")">Clear search</a>
+    </div>
+
+</form>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.TeacherName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CourseName)
+            </th>
+            <th>
+                <p>Edit</p>
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.TeacherName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.CourseName)
+                </td>
+                <td>
+                    <a asp-action="EditCourse" asp-route-id="@item.CourseID">Edit Course</a> |
+                </td>
+                    
+
+            </tr>
+        }
+    </tbody>
+</table>

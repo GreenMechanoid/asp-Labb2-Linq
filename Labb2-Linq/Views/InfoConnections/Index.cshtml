@@ -1,0 +1,53 @@
+﻿@model IEnumerable<Labb2_Linq.Models.InfoConnection>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.students.StudentFullname)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.teachers.TeacherFullname)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.classes.ClassName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.courses.CourseName)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                    @Html.DisplayFor(modelItem => item.students.StudentFullname)
+            </td>
+            <td>
+                    @Html.DisplayFor(modelItem => item.teachers.TeacherFullname)
+            </td>
+            <td>
+                    @Html.DisplayFor(modelItem => item.classes.ClassName)
+            </td>
+            <td>
+                    @Html.DisplayFor(modelItem => item.courses.CourseName)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.ConnectionID">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.ConnectionID">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.ConnectionID">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

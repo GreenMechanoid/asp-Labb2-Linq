@@ -1,0 +1,45 @@
+﻿@model Labb2_Linq.Models.InfoConnection
+
+@{
+    ViewData["Title"] = "Delete";
+}
+
+<h1>Delete</h1>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>InfoConnection</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.students)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.students.StudentID)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.teachers)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.teachers.TeacherID)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.classes)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.classes.ClassesID)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.courses)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.courses.CourseID)
+        </dd>
+    </dl>
+    
+    <form asp-action="Delete">
+        <input type="hidden" asp-for="ConnectionID" />
+        <input type="submit" value="Delete" class="btn btn-danger" /> |
+        <a asp-action="Index">Back to List</a>
+    </form>
+</div>
