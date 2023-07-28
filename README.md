@@ -1,5 +1,3 @@
-# asp-Labb2-Linq
-fully done local, as i forgotten to actually initiate the git repo before i finished
 # Om uppgiften
 
 I denna uppgift kommer du att bygga fyra modeller och koppla ihop dem med navigation properities.
